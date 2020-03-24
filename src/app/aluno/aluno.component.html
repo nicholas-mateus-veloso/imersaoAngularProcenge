@@ -1,20 +1,20 @@
 <app-layout>
 
-    <!-- <p>curso works!</p> -->
-
+    <!-- <p>aluno works!</p> -->
+    
     <div class="card">
         <div class="card-body">
-            <h3 class="card-title">Curso</h3>
+            <h3 class="card-title">Alunos</h3>
 
             <div class="row">
                 <div class="form-group col-12">
                     <label class="control-label" for="nome">Nome:</label>
-                    <input class="form-control" [(ngModel)]="curso.nome" />
+                    <input class="form-control" [(ngModel)]="aluno.nome" />
                 </div>
                 
                 <div class="row" style="margin-bottom: 20px;">
                     <div class="col-12">
-                        <button type="button" class="btn btn-primary" (click)="pesquisar()">Pesquisar</button>
+                        <button type="button" class="btn btn-primary" (click)="consultar()">Consultar</button>
                     </div>
                 </div>
             </div>
@@ -27,23 +27,17 @@
                                 <th></th>
                                 <th>Código</th>
                                 <th>Nome</th>
-                                <th>Instrutor</th>
-                                <th>Local</th>
-                                <th>Carga Horária</th>
                                 <th>Data Início</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr *ngFor="let curso of listaCurso">
+                            <tr *ngFor="let aluno of listaAluno">
                                 <td>
-                                    <input type="radio" name="selecionado" (change)="selecionar(curso)" />
+                                    <input type="radio" name="selecionado" (change)="selecionar(aluno)" />
                                 </td>
-                                <td>{{ curso.codigo }}</td>
-                                <td>{{ curso.nome }}</td>
-                                <td>{{ curso.instrutor }}</td>
-                                <td>{{ curso.local }}</td>
-                                <td>{{ curso.cargaHoraria }}</td>
-                                <td>{{ curso.dataInicio | date: 'dd/MM/yyyy' }}</td>
+                                <td>{{ aluno.codigo }}</td>
+                                <td>{{ aluno.nome }}</td>
+                                <td>{{ aluno.dataNascimento | date: 'dd/MM/yyyy' }}</td>
                             </tr>
                         </tbody>
                     </table>

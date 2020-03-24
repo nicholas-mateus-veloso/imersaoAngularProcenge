@@ -3,6 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { CursoComponent } from './curso/curso.component';
 import { CursomanterComponent } from './curso/cursomanter/cursomanter.component';
+import { AlunoComponent } from './aluno/aluno.component';
+import { AlunomanterComponent } from './aluno/alunomanter/alunomanter.component';
 
 
 const routes: Routes = [
@@ -24,6 +26,21 @@ const routes: Routes = [
   {
     path: 'curso/alterar/:id',
     component: CursomanterComponent,
+    pathMatch: 'full'
+  },
+  {
+    path: 'aluno',
+    component: AlunoComponent,
+    pathMatch: 'full'
+  },
+  {
+    path: 'aluno/incluir',
+    component: AlunomanterComponent,
+    pathMatch: 'full'
+  },
+  {
+    path: 'aluno/alterar/:id',
+    component: AlunomanterComponent,
     pathMatch: 'full'
   }
 ];

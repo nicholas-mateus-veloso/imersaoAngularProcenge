@@ -4,5 +4,5 @@ export class Curso {
     instrutor: string;
     local: string;
     cargaHoraria: string;
-    dataInicio: Date;
+    dataInicio: Date | 'dd/MM/yyyy';
 }

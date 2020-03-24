@@ -1,0 +1,67 @@
+<app-layout>
+
+    <!-- <p>curso works!</p> -->
+
+    <div class="card">
+        <div class="card-body">
+            <h3 class="card-title">Curso</h3>
+
+            <div class="row">
+                <div class="form-group col-12">
+                    <label class="control-label" for="nome">Nome:</label>
+                    <input class="form-control" [(ngModel)]="curso.nome" />
+                </div>
+            </div>
+
+            <div class="row" style="margin-bottom: 20px;">
+                <div class="col-12">
+                    <button type="button" class="btn btn-primary" (click)="pesquisar()">Pesquisar</button>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="table-responsive col-lg-12">
+                    <table class="table table-bordered text-center">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th></th>
+                                <th>Código</th>
+                                <th>Nome</th>
+                                <th>Instrutor</th>
+                                <th>Local</th>
+                                <th>Carga Horária</th>
+                                <th>Data Início</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let curso of listaCurso">
+                                <td>
+                                    <input type="radio" name="selecionado" (change)="selecionar(curso)" />
+                                </td>
+                                <td>{{ curso.codigo }}</td>
+                                <td>{{ curso.nome }}</td>
+                                <td>{{ curso.instrutor }}</td>
+                                <td>{{ curso.local }}</td>
+                                <td>{{ curso.cargaHoraria }}</td>
+                                <td>{{ curso.dataInicio | date: 'dd/MM/yyyy' }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="btn-group">
+                <div class="col-4">
+                        <button type="button" class="btn btn-primary" (click)="incluir()">Incluir</button>
+                </div>
+                <div class="col-4">
+                    <button type="button" class="btn btn-primary" (click)="alterar()">Alterar</button>
+                </div>
+                <div class="col-4">
+                    <button type="button" class="btn btn-danger" (click)="remover()">Excluir</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</app-layout>

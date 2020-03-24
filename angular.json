@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "imersaoAngularProcenge": {
@@ -26,7 +26,7 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [ ]
           },
           "configurations": {
             "production": {
@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "imersaoAngularProcenge"
+    }
+  },
+  "defaultProject": "imersaoAngularProcenge",
+  "cli": {
+    "analytics": false
+  }
 }

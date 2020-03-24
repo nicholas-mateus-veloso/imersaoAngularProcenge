@@ -1,0 +1,45 @@
+<app-layout>
+
+    <!-- <p>cursomanter works!</p> -->
+
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Curso - {{ operacao }}</h5>
+
+            <div class="row">
+                <div class="form-group col-lg-12">
+                    <label for="nome" class="control-label">Nome:</label>
+                    <input type="text" class="form-control" [(ngModel)]="curso.nome" />
+                </div>
+                <div class="form-group col-lg-12">
+                    <label for="instrutor" class="control-label">Instrutor:</label>
+                    <input type="text" class="form-control" [(ngModel)]="curso.instrutor" />
+                </div>
+                <div class="form-group col-lg-12">
+                    <label for="local" class="control-label">Local:</label>
+                    <input type="text" class="form-control" [(ngModel)]="curso.local" />
+                </div>
+                <div class="form-group col-lg-6">
+                    <label for="cargaHoraria" class="control-label">Carga Horária:</label>
+                    <input type="number" class="form-control" [(ngModel)]="curso.cargaHoraria" />
+                </div>
+                <div class="form-group col-lg-6">
+                    <label for="dataInicio" class="control-label">Data Início:</label>
+                    <input type="date" class="form-control" [(ngModel)]="curso.dataInicio" />
+                </div>
+            </div>
+
+            <div class="row" style="margin-bottom: 20px;">
+                <div class="col-lg-12">
+                    <button *ngIf="operacao == 'Incluir'" type="button" class="btn btn-primary"
+                        style="margin-right: 10px;" (click)="incluir()">Incluir</button>
+                    <button *ngIf="operacao != 'Incluir'" type="button" class="btn btn-primary"
+                        style="margin-right: 10px;" (click)="alterar()">Alterar</button>
+                    <button type="button" class="btn btn-primary" style="margin-right: 10px;" (click)="voltar()">Voltar</button>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</app-layout>

@@ -5,6 +5,8 @@ import { CursoComponent } from './curso/curso.component';
 import { CursomanterComponent } from './curso/cursomanter/cursomanter.component';
 import { AlunoComponent } from './aluno/aluno.component';
 import { AlunomanterComponent } from './aluno/alunomanter/alunomanter.component';
+import { MatriculaComponent } from './matricula/matricula.component';
+import { MatriculamanterComponent } from './matricula/matriculamanter/matriculamanter.component';
 
 
 const routes: Routes = [
@@ -28,6 +30,7 @@ const routes: Routes = [
     component: CursomanterComponent,
     pathMatch: 'full'
   },
+
   {
     path: 'aluno',
     component: AlunoComponent,
@@ -41,6 +44,17 @@ const routes: Routes = [
   {
     path: 'aluno/alterar/:id',
     component: AlunomanterComponent,
+    pathMatch: 'full'
+  },
+
+  {
+    path: 'matricula',
+    component: MatriculaComponent,
+    pathMatch: 'full'
+  },
+  {
+    path: 'matricula/incluir',
+    component: MatriculamanterComponent,
     pathMatch: 'full'
   }
 ];

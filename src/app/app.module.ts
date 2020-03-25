@@ -13,6 +13,9 @@ import { AlunoService } from './aluno/servico/aluno.service';
 import { CursomanterComponent } from './curso/cursomanter/cursomanter.component';
 import { AlunoComponent } from './aluno/aluno.component';
 import { AlunomanterComponent } from './aluno/alunomanter/alunomanter.component';
+import { MatriculaComponent } from './matricula/matricula.component';
+import { MatriculamanterComponent } from './matricula/matriculamanter/matriculamanter.component';
+import { MatriculaService } from './matricula/servico/matricula.service';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,9 @@ import { AlunomanterComponent } from './aluno/alunomanter/alunomanter.component'
     LayoutComponent,
     CursomanterComponent,
     AlunoComponent,
-    AlunomanterComponent
+    AlunomanterComponent,
+    MatriculaComponent,
+    MatriculamanterComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +37,8 @@ import { AlunomanterComponent } from './aluno/alunomanter/alunomanter.component'
   ],
   providers: [
     CursoService,
-    AlunoService
+    AlunoService,
+    MatriculaService
   ],
   bootstrap: [AppComponent]
 })

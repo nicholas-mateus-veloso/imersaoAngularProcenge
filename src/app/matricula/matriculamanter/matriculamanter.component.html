@@ -1,0 +1,83 @@
+<app-layout>
+
+    <!-- <p>matriculamanter works!</p> -->
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Matricula - {{ operacao }}</h5>
+
+            <div class="row">
+                <div class="form-group col-lg-6">
+                    <label for="nome" class="control-label">Aluno:</label>
+                    <select [(ngModel)]="matricula.aluno" class="form-control">
+                        <option [ngValue]="null">Selecione</option>
+                        <option *ngFor="let aluno of listaAluno" [ngValue]="aluno">{{ aluno.nome }}</option>
+                    </select>
+                </div>
+            </div>
+
+
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Adicionar Curso</h5>
+                    <div class="row">
+                        <div class="form-group col-lg-6">
+                            <label for="nome" class="control-label">Curso:</label>
+                            <select [(ngModel)]="matriculaCurso.curso" class="form-control">
+                                <option [ngValue]="null">Selecione</option>
+                                <option *ngFor="let curso of listaCurso" [ngValue]="curso">{{ curso.nome }}</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-lg-6">
+                            <label for="dataMatriculaCurso" class="control-label">Data Matrícula:</label>
+                            <input type="date" class="form-control" [(ngModel)]="matriculaCurso.dataMatriculaCurso" />
+                        </div>
+                    </div>
+
+                    <div class="row" style="margin-bottom: 20px;">
+                        <div class="col-lg-12">
+                            <button *ngIf="this.operacao=='Incluir'" type="button" class="btn btn-primary" style="margin-right: 10px;" (click)="adicionar()">Adicionar</button>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="table-responsive-sm col-lg-12">
+                            <table class="table table-bordered text-center">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th>Curso</th>
+                                        <th>Data Matrícula</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let matriculaCurso of matricula.listaMatriculaCurso">
+                                        <td>{{ matriculaCurso.curso.nome }}</td>
+                                        <td>{{ matriculaCurso.dataMatriculaCurso | date: 'dd/MM/yyyy' }}</td>
+                                        <td>
+                                            <a (click)="removercurso(matriculaCurso)"> 
+                                                <button type="button" class="btn btn-danger">Excluir</button>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="row" style="margin-top: 10px; margin-bottom: 10px;">
+                        <div class="btn-group">
+                            <div class="col-lg-6">
+                                <button *ngIf="this.operacao=='Incluir'" type="button" class="btn btn-primary" style="margin-right: 10px;" (click)="incluir()">Incluir</button>
+                            </div>
+                            <div class="col-lg-6">
+                                <button type="button" class="btn btn-primary" style="margin-left: 10px;" (click)="voltar()">Voltar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</app-layout>

@@ -1,0 +1,58 @@
+<app-layout>
+
+    <!-- <p>matricula works!</p> -->
+
+    <div class="card">
+        <div class="card-body">
+            <h3 class="card-title">Matrícula</h3>
+
+            <div class="row">
+                <div class="form-group col-12">
+                    <label class="control-label">Aluno:</label>
+                    <select [(ngModel)]="matricula.aluno" class="form-control">
+                        <option [ngValue]="null">Selecione</option>
+                        <option *ngFor="let aluno of listaAluno" [ngValue]="aluno">{{ aluno.nome }}</option>
+                    </select>
+                    <div class="row" style="margin-top: 10px;">
+                        <div class="col-12">
+                            <button type="button" class="btn btn-primary" (click)="pesquisar()">Pesquisar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="table-responsive-sm col-lg-12">
+                    <table class="table table-bordered text-center">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th></th>
+                                <th>Código</th>
+                                <th>Nome</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let matricula of listaMatricula">
+                                <td>
+                                    <input type="radio" name="selecionado" (change)="selecionar(matricula)" />
+                                </td>
+                                <td>{{ matricula.codigo }}</td>
+                                <td>{{ matricula.aluno.nome }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="btn-group">
+                    <div class="col-lg-6">
+                        <button type="button" class="btn btn-primary" (click)="incluir()">Incluir</button>
+                    </div>
+                    <div class="col-lg-6">
+                        <button type="button" class="btn btn-danger" (click)="remover()">Excluir</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</app-layout>
